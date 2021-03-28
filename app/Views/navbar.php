@@ -27,9 +27,14 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a href="<?= site_url('auth/login'); ?>" class="btn btn-success">Login</a>
+                    <a href="<?= site_url('auth/logout'); ?>" class="btn btn-success">Logout</a>
+                    <a href="<?= site_url('auth/register'); ?>" class="btn btn-success">Register</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>

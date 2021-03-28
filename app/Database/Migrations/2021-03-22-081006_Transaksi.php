@@ -15,39 +15,39 @@ class Transaksi extends Migration
 				'unsigned' => TRUE,
 				'auto_increment' => TRUE
 			],
-			'id_pembeli' => [
-				'type' => 'INT',
-				'constraint' => 11,
-				'unsigned' => TRUE
-			],
 			'id_barang' => [
 				'type' => 'INT',
 				'constraint' => 11,
-				'unsigned' => TRUE
+				'unsigned' => TRUE,
+			],
+			'id_pembeli' => [
+				'type' => 'INT',
+				'constraint' => 11,
+				'unsigned' => TRUE,
 			],
 			'jumlah' => [
 				'type' => 'INT',
-				'constraint' => 11
+				'constraint' => 11,
 			],
 			'total_harga' => [
 				'type' => 'INT',
-				'constraint' => 11
+				'constraint' => 11,
 			],
 			'created_by' => [
 				'type' => 'INT',
-				'constraint' => 11
+				'constraint' => 11,
 			],
 			'created_date' => [
-				'type' => 'DATETIME'
+				'type' => 'DATETIME',
 			],
 			'updated_by' => [
 				'type' => 'INT',
 				'constraint' => 11,
-				'null' => TRUE
+				'null' => TRUE,
 			],
 			'updated_date' => [
 				'type' => 'DATETIME',
-				'null' => TRUE
+				'null' => TRUE,
 			]
 		]);
 

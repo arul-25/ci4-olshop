@@ -15,34 +15,40 @@ class Komentar extends Migration
 				'unsigned' => TRUE,
 				'auto_increment' => TRUE
 			],
+			'id_barang' => [
+				'type' => 'INT',
+				'constraint' => 11,
+				'unsigned' => TRUE,
+			],
 			'id_user' => [
 				'type' => 'INT',
 				'constraint' => 11,
-				'unsigned' => TRUE
+				'unsigned' => TRUE,
 			],
 			'komentar' => [
 				'type' => 'TEXT',
 			],
 			'created_by' => [
 				'type' => 'INT',
-				'constraint' => 11
+				'constraint' => 11,
 			],
 			'created_date' => [
-				'type' => 'DATETIME'
+				'type' => 'DATETIME',
 			],
 			'updated_by' => [
 				'type' => 'INT',
 				'constraint' => 11,
-				'null' => TRUE
+				'null' => TRUE,
 			],
 			'updated_date' => [
 				'type' => 'DATETIME',
-				'null' => TRUE
+				'null' => TRUE,
 			]
 		]);
 
 		$this->forge->addKey('id', TRUE);
 		$this->forge->addForeignKey('id_user', 'user', 'id');
+		$this->forge->addForeignKey('id_barang', 'barang', 'id');
 		$this->forge->createTable('komentar');
 	}
 
