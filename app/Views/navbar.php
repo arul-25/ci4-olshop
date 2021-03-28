@@ -9,30 +9,24 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                <a href="" id="dropdown1" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Barang</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a href="<?= site_url('barang/index'); ?>" class="dropdown-item">List Barang</a>
+                    <a href="<?= site_url('barang/create'); ?>" class="dropdown-item">Tambah Barang</a>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
         <div class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a href="<?= site_url('auth/login'); ?>" class="btn btn-success">Login</a>
-                    <a href="<?= site_url('auth/logout'); ?>" class="btn btn-success">Logout</a>
-                    <a href="<?= site_url('auth/register'); ?>" class="btn btn-success">Register</a>
+                    <?php if (session()->get('isLoggedIn')) : ?>
+                        <a href="<?= site_url('auth/logout'); ?>" class="btn btn-success">Logout</a>
+                    <?php else : ?>
+                        <a href="<?= site_url('auth/login'); ?>" class="btn btn-success">Login</a>
+                        <a href="<?= site_url('auth/register'); ?>" class="btn btn-success">Register</a>
+                    <?php endif; ?>
                 </li>
             </ul>
         </div>

@@ -86,4 +86,41 @@ class Validation
 			]
 		]
 	];
+
+	public $barang = [
+		'nama' => [
+			'label' => 'Nama Barang',
+			'rules' => 'required|min_length[3]',
+			'errors' => [
+				'required' => 'Rules.nama.required',
+				'min_length' => 'Rules.nama.min_length'
+			]
+		],
+		'harga' => [
+			'label' => 'Harga Barang',
+			'rules' => 'required|is_natural',
+			'errors' => [
+				'required' => 'Rules.harga.required',
+				'is_natural' => 'Rules.harga.is_natural'
+			]
+		],
+		'stock' => [
+			'label' => 'Stock Barang',
+			'rules' => 'required|is_natural',
+			'errors' => [
+				'required' => 'Rules.stock.required',
+				'is_natural' => 'Rules.stock.is_natural'
+			]
+		],
+		'gambar' => [
+			'label' => 'Gambar',
+			'rules' => 'uploaded[gambar]|max_size[gambar,2048]|is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png]',
+			'errors' => [
+				'uploaded' => 'Anda Belum Mengupload {field}',
+				'max_size' => 'Ukuran {field} terlalu besar',
+				'is_image' => 'Yang anda pilih bukan {field}',
+				'mime_in' => 'Yang anda pilih bukan {field}'
+			]
+		]
+	];
 }
