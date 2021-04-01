@@ -14,12 +14,12 @@
     <tbody>
         <?php foreach ($barang as $index => $row) : ?>
             <tr>
-                <td><?= $index++; ?></td>
+                <td><?= ($index + 1); ?></td>
                 <td><?= $row->nama; ?></td>
                 <td>
                     <img src="<?= base_url('uploads/' . $row->gambar) ?>" class="img-fluid" width="100px" height="100px" alt="">
                 </td>
-                <td><?= $row->harga; ?></td>
+                <td>Rp. <?= number_format($row->harga, '0', '', '.'); ?></td>
                 <td><?= $row->stock; ?></td>
                 <td>
                     <a href="<?= site_url('barang/view/' . $row->id) ?>" class="btn btn-primary">View</a>

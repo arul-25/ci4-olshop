@@ -123,4 +123,29 @@ class Validation
 			]
 		]
 	];
+
+	public $transaksi = [
+		'total_harga' => [
+			'label' => 'Total Harga',
+			'rules' => 'required',
+			'errors' => [
+				'required' => 'Rules.total_harga.required',
+			]
+		],
+		'alamat' => [
+			'label' => 'Stock Barang',
+			'rules' => 'required|max_length[50]',
+			'errors' => [
+				'required' => 'Rules.alamat.required',
+				'max_length' => 'Rules.alamat.max_length'
+			]
+		],
+		'ongkir' => [
+			'label' => 'Ongkir',
+			'rules' => 'required',
+			'errors' => [
+				'required' => 'Rules.ongkir.required',
+			]
+		],
+	];
 }

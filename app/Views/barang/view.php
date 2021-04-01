@@ -12,7 +12,7 @@
         </div>
         <div class="col-md">
             <a href="" class="text-success"><?= $barang->nama; ?></a>
-            <h4>Harga : <?= $barang->harga; ?> </h4>
+            <h4>Harga : Rp. <?= number_format($barang->harga, '0', '', '.'); ?> </h4>
             <h4>Stock : <?= $barang->stock; ?> </h4>
         </div>
     </div>

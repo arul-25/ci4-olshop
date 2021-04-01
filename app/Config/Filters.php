@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use App\Controllers\Etalase;
+use App\Filters\Admin;
 use App\Filters\Auth;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
@@ -20,7 +22,9 @@ class Filters extends BaseConfig
 		'csrf'     => CSRF::class,
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
-		'auth' => Auth::class
+		'auth' => Auth::class,
+		'admin' => Admin::class,
+		'etalase' => Etalase::class,
 	];
 
 	/**
@@ -32,7 +36,7 @@ class Filters extends BaseConfig
 	public $globals = [
 		'before' => [
 			// 'honeypot',
-			'csrf',
+			'csrf' => ['except' => 'etalase/getCost'],
 			'auth' => ['except' => ['auth/*', '/']]
 		],
 		'after'  => [
@@ -61,5 +65,11 @@ class Filters extends BaseConfig
 	 *
 	 * @var array
 	 */
-	public $filters = [];
+	public $filters = [
+		'admin' => [
+			'before' => [
+				'barang/*',
+			]
+		]
+	];
 }

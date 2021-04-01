@@ -9,14 +9,22 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
-                <a href="" id="dropdown1" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Barang</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a href="<?= site_url('barang/index'); ?>" class="dropdown-item">List Barang</a>
-                    <a href="<?= site_url('barang/create'); ?>" class="dropdown-item">Tambah Barang</a>
-                </div>
-            </li>
+            <?php if (session()->get('isLoggedIn') and session()->get('isLoggedIn') == true) : ?>
+                <?php if (session()->get('role') == 0) : ?>
+                    <li class="nav-item dropdown">
+                        <a href="" id="dropdown1" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Barang</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a href="<?= site_url('barang/index'); ?>" class="dropdown-item">List Barang</a>
+                            <a href="<?= site_url('barang/create'); ?>" class="dropdown-item">Tambah Barang</a>
+                        </div>
+                    </li>
+                <?php else : ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= site_url('etalase/index'); ?>">Etalase</a>
+                    </li>
+                <?php endif; ?>
+            <?php endif; ?>
         </ul>
         <div class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
